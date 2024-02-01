@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { addTask, editTask } from '../redux/actions';
+import { Link } from 'react-router-dom';
 
 const TaskForm = ({ taskToEdit, onSubmit }) => {
   const dispatch = useDispatch();
@@ -34,7 +35,7 @@ const TaskForm = ({ taskToEdit, onSubmit }) => {
   return (
     <form onSubmit={handleSubmit} className='flex flex-col gap-2'>
       <label >Title:</label>
-      <input type="text" className='' value={title} onChange={(e) => setTitle(e.target.value)} required />
+      <input type="text" className='text-[#6E2208]' value={title} onChange={(e) => setTitle(e.target.value)} required />
 
       <label>Description:</label>
       <textarea value={description} onChange={(e) => setDescription(e.target.value)} required />
@@ -64,7 +65,9 @@ const TaskForm = ({ taskToEdit, onSubmit }) => {
       </div>
 
       </div>
-      <button type="submit">{taskToEdit ? 'Submit' : 'Add Task'}</button>
+      <button type="submit" className="bg-[#FFF3D9] text-[#6E2208] rounded-md p-2">{taskToEdit ? 'Submit' : 'Add Task'}</button>
+      <button className='bg-[#FFF3D9] text-[#6E2208] rounded-md p-1 '><Link to="/">Home page</Link></button>
+
     </form>
   );
 };

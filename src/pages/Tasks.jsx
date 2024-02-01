@@ -21,7 +21,6 @@ function Task() {
       <TaskList />
     </Layout>
 
-    <button className='bg-[#FFF3D9] text-black rounded-md p-2'><Link to="/">Go back Home</Link></button>
     </div>
   );
 }
