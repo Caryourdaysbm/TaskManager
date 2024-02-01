@@ -9,17 +9,19 @@ function Task() {
     
  
   return (
-    <div>
-      <h1>Task</h1>
-      <p>Welcome to the task page!</p>
-      <li>
-            <Link to="/">Home</Link>
-          </li>
+    <div className='flex flex-col justify-center items-center  m-14'>
+      <h1 className='font-bold text-3xl' >Task</h1>
+      <p >Create new tasks here</p>
+  
+            
+          
 
           <Layout>
       <h1>Task Management Dashboard</h1>
       <TaskList />
     </Layout>
+
+    <button className='bg-[#FFF3D9] text-black rounded-md p-2'><Link to="/">Go back Home</Link></button>
     </div>
   );
 }

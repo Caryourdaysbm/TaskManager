@@ -32,9 +32,9 @@ const TaskForm = ({ taskToEdit, onSubmit }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <label>Title:</label>
-      <input type="text" value={title} onChange={(e) => setTitle(e.target.value)} required />
+    <form onSubmit={handleSubmit} className='flex flex-col gap-2'>
+      <label >Title:</label>
+      <input type="text" className='' value={title} onChange={(e) => setTitle(e.target.value)} required />
 
       <label>Description:</label>
       <textarea value={description} onChange={(e) => setDescription(e.target.value)} required />
@@ -42,10 +42,12 @@ const TaskForm = ({ taskToEdit, onSubmit }) => {
       <label>Due Date:</label>
       <input type="date" value={dueDate} onChange={(e) => setDueDate(e.target.value)} required />
 
-      <label>Status:</label>
+      <div className='flex justify-center gap-2'>
+      <label className='p-1'> Select Status: </label>
       <div>
         <button
           type="button"
+          className='rounded-sm p-1'
           onClick={() => setStatus('pending')}
           style={{ background: status === 'pending' ? '#3498db' : 'transparent' }}
         >
@@ -53,6 +55,7 @@ const TaskForm = ({ taskToEdit, onSubmit }) => {
         </button>
         <button
           type="button"
+          className='rounded-sm p-1'
           onClick={() => setStatus('completed')}
           style={{ background: status === 'completed' ? '#2ecc71' : 'transparent' }}
         >
@@ -60,6 +63,7 @@ const TaskForm = ({ taskToEdit, onSubmit }) => {
         </button>
       </div>
 
+      </div>
       <button type="submit">{taskToEdit ? 'Submit' : 'Add Task'}</button>
     </form>
   );

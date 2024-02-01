@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import TaskItem from './Taskitem';
 import TaskForm from './TaskForm';
+
 import { filterTasks } from '../redux/actions';
 
 const TaskList = () => {
@@ -27,18 +28,21 @@ const TaskList = () => {
     <div>
      
       <TaskForm taskToEdit={taskToEdit} />
+      <h3 className='font-bold text-3xl'>List of Tasks</h3>
       <label>Filter by Status: </label>
-      <select value={filteredStatus} onChange={handleFilter}>
+      <select value={filteredStatus} onChange={handleFilter} className='text-black rounded-sm'>
         <option value="all">All</option>
         <option value="pending">Pending</option>
         <option value="completed">Completed</option>
       </select>   
       <ul>
+        <div>
         {tasks
           .filter((task) => (filteredStatus === 'all' ? true : task.status === filteredStatus))
           .map((task) => (
             <TaskItem key={task.id} task={task} openEditForm={openEditForm} />
           ))}
+        </div>
       </ul>
 
       

@@ -1,12 +1,13 @@
 import { Routes, Route, Link, BrowserRouter as Router  } from 'react-router-dom';
 import Home from './pages/Home';
 import Task from './pages/Tasks';
-import './App.css';
+
+import './styles/index.css'
 
 function App() {
   return (
   <Router>
-     <div>
+     <div >
       <nav>
       
       </nav>
