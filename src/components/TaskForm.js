@@ -35,37 +35,25 @@ const TaskForm = ({ taskToEdit, onSubmit }) => {
   return (
     <form onSubmit={handleSubmit} className='flex flex-col gap-2'>
       <label >Title:</label>
-      <input type="text" className='text-[#6E2208]' value={title} onChange={(e) => setTitle(e.target.value)} required />
+      <input type="text" className='text-[#6E2208] bg-[#FFF3D9]' value={title} onChange={(e) => setTitle(e.target.value)} required />
 
       <label>Description:</label>
-      <textarea value={description}  className='text-[#6E2208]' onChange={(e) => setDescription(e.target.value)} required />
+      <textarea value={description}  className='text-[#6E2208] bg-[#FFF3D9]' onChange={(e) => setDescription(e.target.value)} required />
 
       <label>Due Date:</label>
-      <input type="date" value={dueDate}  className='text-[#6E2208]' onChange={(e) => setDueDate(e.target.value)} required />
+      <input type="date" value={dueDate}  className='text-[#6E2208] bg-[#FFF3D9]' onChange={(e) => setDueDate(e.target.value)} required />
 
+      
       <div className='flex justify-center gap-2'>
-      <label className='p-1'> Select Status: </label>
-      <div>
-        <button
-          type="button"
-          className='rounded-sm p-1'
-          onClick={() => setStatus('pending')}
-          style={{ background: status === 'pending' ? '#3498db' : 'transparent' }}
-        >
-          Pending
-        </button>
-        <button
-          type="button"
-          className='rounded-sm p-1'
-          onClick={() => setStatus('completed')}
-          style={{ background: status === 'completed' ? '#2ecc71' : 'transparent' }}
-        >
-          Completed
-        </button>
+        <label className='p-1 '>Select Status: </label>
+        <select value={status} onChange={(e) => setStatus(e.target.value)} className='rounded-md p-1 text-[#6E2208] bg-[#FFF3D9] border-2 border-[#6E2208]'>
+          <option value="pending">Pending</option>
+          <option value="completed">Completed</option>
+        </select>
       </div>
 
-      </div>
-      <button type="submit" className="bg-[#2ecc71] text-[#6E2208] rounded-md p-2 w-[50%]">{taskToEdit ? 'Submit' : 'Add Task'}</button>
+
+      <button type="submit" className="bg-[#2ecc71] text-[#FFF3D9] rounded-md p-2 w-[50%]">{taskToEdit ? 'Submit' : 'Add Task'}</button>
 
     </form>
   );
