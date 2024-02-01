@@ -28,7 +28,7 @@ const TaskList = () => {
     <div>
      
       <TaskForm taskToEdit={taskToEdit} />
-      <h3 className='font-bold text-3xl'>List of Tasks</h3>
+      <h3 className='font-bold text-3xl mt-9'>List of Tasks</h3>
       <label>Filter by Status: </label>
       <select value={filteredStatus} onChange={handleFilter} className='text-[#6E2208] rounded-sm'>
         <option value="all">All</option>
