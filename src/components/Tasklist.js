@@ -40,7 +40,7 @@ const TaskList = () => {
         {tasks
           .filter((task) => (filteredStatus === 'all' ? true : task.status === filteredStatus))
           .map((task) => (
-            <TaskItem key={task.id} task={task} openEditForm={openEditForm} />
+            <div className='bg-[#FFF3D9] text-[#6E2208] rounded-lg'><TaskItem key={task.id} task={task} openEditForm={openEditForm} /></div>
           ))}
         </div>
       </ul>

@@ -19,12 +19,12 @@ const TaskItem = ({ task }) => {
 
   return (
     <li>
-      <div>
+      <div className='flex flex-col p-2 m-2'>
         <strong>{task.title}</strong>
         <p>{task.description}</p>
-        <p>Due Date: {task.dueDate}</p>
-        <p>Status: {task.status}</p>
-        <button onClick={handleEditStatus}>Edit Status</button>
+        <p> <span className='font-bold'>Due Date: </span>{task.dueDate}</p>
+        <p><span className='font-bold'>Status: </span> {task.status}</p>
+        <button className='bg-[#6E2208] text-[#FFF3D9] rounded-md p-2' onClick={handleEditStatus}>Edit Status</button>
 
         {isEditing && <TaskForm taskToEdit={task} onSubmit={handleEditTask} />}
       </div>
