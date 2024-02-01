@@ -20,6 +20,7 @@ function Task() {
       <h1>Task Management Dashboard</h1>
       <TaskList />
     </Layout>
+    <button className='bg-black text-[#FFF3D9] rounded-md p-1 w-[100px]'><Link to="/">Home page</Link></button>
 
     </div>
   );

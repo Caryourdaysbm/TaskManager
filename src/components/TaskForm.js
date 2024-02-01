@@ -38,10 +38,10 @@ const TaskForm = ({ taskToEdit, onSubmit }) => {
       <input type="text" className='text-[#6E2208]' value={title} onChange={(e) => setTitle(e.target.value)} required />
 
       <label>Description:</label>
-      <textarea value={description} onChange={(e) => setDescription(e.target.value)} required />
+      <textarea value={description}  className='text-[#6E2208]' onChange={(e) => setDescription(e.target.value)} required />
 
       <label>Due Date:</label>
-      <input type="date" value={dueDate} onChange={(e) => setDueDate(e.target.value)} required />
+      <input type="date" value={dueDate}  className='text-[#6E2208]' onChange={(e) => setDueDate(e.target.value)} required />
 
       <div className='flex justify-center gap-2'>
       <label className='p-1'> Select Status: </label>
@@ -65,8 +65,7 @@ const TaskForm = ({ taskToEdit, onSubmit }) => {
       </div>
 
       </div>
-      <button type="submit" className="bg-[#FFF3D9] text-[#6E2208] rounded-md p-2">{taskToEdit ? 'Submit' : 'Add Task'}</button>
-      <button className='bg-[#FFF3D9] text-[#6E2208] rounded-md p-1 '><Link to="/">Home page</Link></button>
+      <button type="submit" className="bg-[#2ecc71] text-[#6E2208] rounded-md p-2 w-[50%]">{taskToEdit ? 'Submit' : 'Add Task'}</button>
 
     </form>
   );
